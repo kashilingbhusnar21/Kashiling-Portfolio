@@ -393,6 +393,26 @@ body {
     transform: translateY(-3px);
 }
 
+.btn-linkedin {
+    background: #0077b5;
+    color: #ffffff !important;
+    border: 1px solid #0077b5;
+    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.3);
+}
+
+.btn-linkedin:hover {
+    background: #006097;
+    border-color: #006097;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 119, 181, 0.5);
+}
+
+.btn-svg {
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
 .btn-copy {
     background: rgba(6, 182, 212, 0.1);
     color: var(--accent-color);
