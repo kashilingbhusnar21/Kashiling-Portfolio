@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashiling Bhusnar - Backend Software Engineer | Java 17 & Spring Boot 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">KB<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education & Certs</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn" title="Toggle Dark/Light Mode" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <span class="live-dot-green"></span>
+                    <span>Backend-focused Software Engineer</span>
+                </div>
+                <h1>Hi, I'm <span class="highlight">Kashiling Bhusnar</span></h1>
+                
+                <!-- Dynamic Typing Subtitle -->
+                <div class="typing-container">
+                    <span class="typing-prefix">&gt; </span>
+                    <span id="typing-text" class="typing-text">Java 17 & Spring Boot 3 Specialist</span>
+                    <span class="typing-cursor">|</span>
+                </div>
+
+                <p class="description">
+                    Engineering high-throughput, multi-tenant SaaS platforms and low-latency execution pipelines using Docker and RabbitMQ. Strong track record of designing scalable REST APIs, optimizing system performance, and implementing secure, cloud-native deployments.
+                </p>
+
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Explore Projects</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/kashilingbhusnar21" target="_blank" class="btn btn-secondary">
+                        <span class="btn-icon">⚡</span>
+                        <span>GitHub Profile</span>
+                    </a>
+                    <button class="btn btn-copy" onclick="copyContact('kashilingbhusnur@gmail.com', 'Email')">
+                        <span class="btn-icon">📋</span>
+                        <span>Copy Email</span>
+                    </button>
+                </div>
+
+                <!-- Animated Interactive Counters -->
+                <div class="hero-stats">
+                    <div class="stat-item" data-counter="5000" data-suffix="+">
+                        <span class="stat-number">5,000+</span>
+                        <span class="stat-label">Concurrent Collectors Tested</span>
+                    </div>
+                    <div class="stat-item" data-counter="50" data-prefix="< " data-suffix="ms">
+                        <span class="stat-number">&lt; 50ms</span>
+                        <span class="stat-label">Latency (0.00% Error Rate)</span>
+                    </div>
+                    <div class="stat-item" data-counter="83" data-suffix=" Tests">
+                        <span class="stat-number">83</span>
+                        <span class="stat-label">Automated Tests (100% Pass)</span>
+                    </div>
+                    <div class="stat-item" data-counter="100" data-suffix="+">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">DSA Sandbox Problems Engine</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Terminal Simulator -->
+                <div class="hero-terminal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <div class="terminal-title">bash — kashiling@backend-node: ~</div>
+                        <div class="terminal-quick-actions">
+                            <span class="quick-title">Quick commands:</span>
+                            <button class="term-tag" onclick="runTerminalCmd('jmeter')">Run JMeter</button>
+                            <button class="term-tag" onclick="runTerminalCmd('health')">System Health</button>
+                            <button class="term-tag" onclick="runTerminalCmd('stack')">Tech Stack</button>
+                            <button class="term-tag" onclick="runTerminalCmd('clear')">Clear</button>
+                        </div>
+                    </div>
+                    <div class="terminal-screen" id="terminal-screen">
+                        <div class="term-row comment"># Welcome to Kashiling's Backend Console. Click a quick command above or type below.</div>
+                        <div class="term-row sys">Node: [aws-ec2-t3a] | Cluster: [DairyAI &amp; CodeArena Engine] | Status: <span class="text-success">ONLINE</span></div>
+                    </div>
+                    <form class="terminal-form" onsubmit="handleTerminalSubmit(event)">
+                        <span class="term-prompt">kashiling@backend:~$</span>
+                        <input type="text" id="terminal-input" class="term-input" placeholder="type 'help', 'jmeter', 'health', 'stack', 'projects'..." autocomplete="off" spellcheck="false">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-image-wrapper">
+                    <img src="IMG_20240116_231808_625.jpg" alt="Kashiling Bhusnar" class="profile-photo">
+                    <div class="image-experience-pill">
+                        <span class="pill-dot"></span>
+                        <span>Open to Backend Opportunities</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="lead-text">
+                        Backend-focused Software Engineer and Master of Computer Applications (MCA) candidate specializing in <strong>Java 17, Spring Boot 3, and microservices architecture</strong>.
+                    </p>
+                    <p>
+                        I engineer enterprise platforms designed to withstand production loads — from multi-tenant data isolation and automated ledger engines to hardware IoT telemetry pipelines and sandbox code execution environments.
+                    </p>
+                    <p>
+                        With deep expertise in <strong>Core Java (OOPs, Collections, Multithreading, Streams)</strong>, <strong>Spring Security & stateless JWT RBAC</strong>, and <strong>asynchronous message queuing with RabbitMQ</strong>, I construct robust distributed systems engineered for strict concurrency, fault tolerance, and low latency.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-chip">
+                            <div class="chip-icon">⚡</div>
+                            <div>
+                                <strong>High-Throughput Microservices</strong>
+                                <span>RabbitMQ async message queues, SSE verdict streaming, Docker sandboxes</span>
+                            </div>
+                        </div>
+                        <div class="highlight-chip">
+                            <div class="chip-icon">🛡️</div>
+                            <div>
+                                <strong>Multi-Tenant Cloud Architectures</strong>
+                                <span>Row-level tenant isolation, NGINX reverse proxy, AWS EC2, ELB & Auto Scaling</span>
+                            </div>
+                        </div>
+                        <div class="highlight-chip">
+                            <div class="chip-icon">🧪</div>
+                            <div>
+                                <strong>Rigorous Verification & Stress Testing</strong>
+                                <span>JUnit 5 & Mockito test suites, Apache JMeter stress testing up to 5,000 concurrent collectors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section with Live Search & Filtering -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <p class="section-subtitle">Core technical proficiencies based on production engineering and system architecture</p>
+            
+            <!-- Interactive Search & Filter Controls -->
+            <div class="skills-interactive-bar">
+                <div class="skill-search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="skill-search-input" placeholder="Search 30+ skills (e.g. Spring, Docker, Redis, JMeter)..." oninput="filterSkills()">
+                </div>
+                <div class="skill-filter-pills">
+                    <button class="filter-pill active" onclick="filterSkillCategory('all')">All Skills</button>
+                    <button class="filter-pill" onclick="filterSkillCategory('backend')">Backend &amp; Architecture</button>
+                    <button class="filter-pill" onclick="filterSkillCategory('languages')">Languages</button>
+                    <button class="filter-pill" onclick="filterSkillCategory('cloud')">Cloud &amp; DevOps</button>
+                    <button class="filter-pill" onclick="filterSkillCategory('databases')">Databases</button>
+                    <button class="filter-pill" onclick="filterSkillCategory('testing')">Testing</button>
+                </div>
+            </div>
+
+            <div class="skills-categories-grid" id="skills-grid">
+                <!-- Backend & Architecture -->
+                <div class="skill-category-card" data-category="backend">
+                    <div class="category-header">
+                        <div class="category-icon">⚙️</div>
+                        <h3>Backend &amp; Architecture</h3>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tech-badge primary" data-skill="Spring Boot 3">Spring Boot 3</span>
+                        <span class="tech-badge primary" data-skill="Spring Security">Spring Security</span>
+                        <span class="tech-badge primary" data-skill="Microservices">Microservices</span>
+                        <span class="tech-badge" data-skill="Spring Data JPA">Spring Data JPA</span>
+                        <span class="tech-badge" data-skill="Hibernate">Hibernate</span>
+                        <span class="tech-badge primary" data-skill="RabbitMQ">RabbitMQ</span>
+                        <span class="tech-badge" data-skill="RESTful APIs">RESTful APIs</span>
+                        <span class="tech-badge" data-skill="Server-Sent Events (SSE)">Server-Sent Events (SSE)</span>
+                        <span class="tech-badge" data-skill="JWT & RBAC">JWT &amp; RBAC</span>
+                        <span class="tech-badge" data-skill="Multi-Tenancy">Multi-Tenancy</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="skill-category-card" data-category="languages">
+                    <div class="category-header">
+                        <div class="category-icon">💻</div>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tech-badge primary" data-skill="Java 17">Java 17 (Core, OOPs, Collections, Multithreading)</span>
+                        <span class="tech-badge primary" data-skill="SQL">SQL</span>
+                        <span class="tech-badge" data-skill="JavaScript">JavaScript (ES6+)</span>
+                        <span class="tech-badge" data-skill="HTML5">HTML5</span>
+                        <span class="tech-badge" data-skill="CSS3">CSS3</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="skill-category-card" data-category="cloud">
+                    <div class="category-header">
+                        <div class="category-icon">☁️</div>
+                        <h3>Cloud &amp; DevOps</h3>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tech-badge primary" data-skill="Docker">Docker</span>
+                        <span class="tech-badge primary" data-skill="AWS EC2">AWS (EC2, S3, IAM)</span>
+                        <span class="tech-badge" data-skill="AWS ELB & ASG">AWS ELB &amp; ASG</span>
+                        <span class="tech-badge" data-skill="NGINX">NGINX Reverse Proxy</span>
+                        <span class="tech-badge" data-skill="Containerization">Containerization</span>
+                        <span class="tech-badge" data-skill="Vercel">Vercel</span>
+                        <span class="tech-badge" data-skill="Railway">Railway</span>
+                    </div>
+                </div>
+
+                <!-- Databases & Caching -->
+                <div class="skill-category-card" data-category="databases">
+                    <div class="category-header">
+                        <div class="category-icon">🗄️</div>
+                        <h3>Databases &amp; Caching</h3>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tech-badge primary" data-skill="MySQL">MySQL (Relational Schema Design)</span>
+                        <span class="tech-badge primary" data-skill="Redis">Redis (Distributed Caching)</span>
+                        <span class="tech-badge" data-skill="Data Normalization">Data Normalization</span>
+                        <span class="tech-badge" data-skill="Row-Level Isolation">Row-Level Tenant Isolation</span>
+                    </div>
+                </div>
+
+                <!-- Testing & Performance -->
+                <div class="skill-category-card" data-category="testing">
+                    <div class="category-header">
+                        <div class="category-icon">🧪</div>
+                        <h3>Testing &amp; Performance</h3>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tech-badge primary" data-skill="JUnit 5">JUnit 5</span>
+                        <span class="tech-badge primary" data-skill="Mockito">Mockito</span>
+                        <span class="tech-badge" data-skill="MockMvc">MockMvc</span>
+                        <span class="tech-badge primary" data-skill="Apache JMeter">Apache JMeter (Load &amp; Stress Testing)</span>
+                        <span class="tech-badge" data-skill="Concurrency Simulation">Concurrency Simulation</span>
+                    </div>
+                </div>
+
+                <!-- Developer Tools -->
+                <div class="skill-category-card" data-category="cloud">
+                    <div class="category-header">
+                        <div class="category-icon">🛠️</div>
+                        <h3>Developer Tools &amp; Build</h3>
+                    </div>
+                    <div class="tags-container">
+                        <span class="tech-badge" data-skill="Git">Git</span>
+                        <span class="tech-badge" data-skill="GitHub">GitHub</span>
+                        <span class="tech-badge" data-skill="Maven">Maven</span>
+                        <span class="tech-badge" data-skill="Postman">Postman</span>
+                        <span class="tech-badge" data-skill="IntelliJ IDEA">IntelliJ IDEA</span>
+                        <span class="tech-badge" data-skill="Linux CLI">Linux / CLI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Interactive Tabs & Diagrams -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <p class="section-subtitle">High-throughput, distributed systems and enterprise SaaS platforms</p>
+
+            <div class="projects-detailed-list">
+                
+                <!-- Project 1: DairyAI Nexus -->
+                <div class="project-detailed-card" id="project-dairyai">
+                    <div class="project-header">
+                        <div class="project-meta-top">
+                            <span class="project-type-badge">Multi-Tenant SaaS &amp; IoT Platform</span>
+                            <span class="project-timeline">Feb 2026 – Present</span>
+                        </div>
+                        <h3 class="project-title">DairyAI Nexus – Multi-Tenant SaaS Dairy ERP &amp; Cloud IoT Platform</h3>
+                        <div class="project-links-bar">
+                            <a href="https://dairy-ainexusfrontend.vercel.app" target="_blank" class="btn-project-link live">
+                                <span class="dot live-dot"></span>
+                                <span>Live Demo (dairy-ainexusfrontend.vercel.app)</span>
+                            </a>
+                            <a href="https://github.com/kashilingbhusnar21/SmartDairy-Multi-tenant-System" target="_blank" class="btn-project-link github">
+                                <span>GitHub Repository</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Pills -->
+                    <div class="project-tech-line">
+                        <span class="tech-stack-label">Tech Stack:</span>
+                        <div class="tech-stack-tags">
+                            <span class="stack-chip">Java 17</span>
+                            <span class="stack-chip">Spring Boot 3</span>
+                            <span class="stack-chip">MySQL</span>
+                            <span class="stack-chip">Redis</span>
+                            <span class="stack-chip">React</span>
+                            <span class="stack-chip">AWS (EC2, ELB, ASG)</span>
+                            <span class="stack-chip">NGINX</span>
+                            <span class="stack-chip">Docker</span>
+                            <span class="stack-chip">JMeter</span>
+                            <span class="stack-chip">Groq AI</span>
+                            <span class="stack-chip">JUnit 5</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Project Sub-Tabs -->
+                    <div class="project-tabs-nav">
+                        <button class="proj-tab-btn active" onclick="switchProjectTab('dairyai', 'metrics')">📊 Benchmarks &amp; Metrics</button>
+                        <button class="proj-tab-btn" onclick="switchProjectTab('dairyai', 'architecture')">🏛️ Pipeline Architecture</button>
+                        <button class="proj-tab-btn" onclick="switchProjectTab('dairyai', 'bullets')">📋 Technical Achievements</button>
+                    </div>
+
+                    <!-- Tab Content 1: Metrics -->
+                    <div class="proj-tab-content active" id="dairyai-tab-metrics">
+                        <div class="project-metrics-grid">
+                            <div class="metric-box">
+                                <div class="metric-val">5,000</div>
+                                <div class="metric-lbl">Concurrent Collectors (16,000+ Reqs)</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-val">&lt; 50ms</div>
+                                <div class="metric-lbl">Latency &amp; 0.00% Error Rate</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-val">83 Tests</div>
+                                <div class="metric-lbl">JUnit 5 &amp; Mockito (100% Pass)</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-val">3 Languages</div>
+                                <div class="metric-lbl">Trilingual AI (EN, HI, MR)</div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Benchmarking Visualizer -->
+                        <div class="bench-visualizer">
+                            <div class="bench-header">
+                                <strong>Apache JMeter Stress Test Verification</strong>
+                                <span class="badge-bench-pass">Passed (16,000 / 16,000 Reqs)</span>
+                            </div>
+                            <div class="bench-bars">
+                                <div class="bench-row">
+                                    <div class="bench-name">P95 Response Latency (Goal: &lt; 200ms)</div>
+                                    <div class="bench-track">
+                                        <div class="bench-fill green" style="width: 24%">44.2 ms</div>
+                                    </div>
+                                </div>
+                                <div class="bench-row">
+                                    <div class="bench-name">HTTP Error Rate (Goal: 0.00%)</div>
+                                    <div class="bench-track">
+                                        <div class="bench-fill green" style="width: 1%">0.00% (0 errors)</div>
+                                    </div>
+                                </div>
+                                <div class="bench-row">
+                                    <div class="bench-name">Tenant Boundary Isolation Leakage</div>
+                                    <div class="bench-track">
+                                        <div class="bench-fill blue" style="width: 100%">100% Isolated (Row-Level)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content 2: Architecture Pipeline -->
+                    <div class="proj-tab-content" id="dairyai-tab-architecture">
+                        <div class="architecture-flow-diagram">
+                            <div class="flow-step">
+                                <div class="step-num">1</div>
+                                <div class="step-card">
+                                    <h4>Hardware IoT Telemetry</h4>
+                                    <p>Automated milk scale &amp; analyzer streams signed with cryptographic Device-API-Keys.</p>
+                                </div>
+                            </div>
+                            <div class="flow-connector">➔</div>
+                            <div class="flow-step">
+                                <div class="step-num">2</div>
+                                <div class="step-card">
+                                    <h4>NGINX Reverse Proxy</h4>
+                                    <p>SSL termination &amp; secure API routing on AWS EC2 connecting to Vercel UI.</p>
+                                </div>
+                            </div>
+                            <div class="flow-connector">➔</div>
+                            <div class="flow-step">
+                                <div class="step-num">3</div>
+                                <div class="step-card">
+                                    <h4>Spring Boot 3 Core Engine</h4>
+                                    <p>JWT RBAC, dynamic FAT/SNF pricing algorithms, and cattle feed debt deductions.</p>
+                                </div>
+                            </div>
+                            <div class="flow-connector">➔</div>
+                            <div class="flow-step">
+                                <div class="step-num">4</div>
+                                <div class="step-card">
+                                    <h4>Redis Cache &amp; MySQL</h4>
+                                    <p>Passbook ledger caching with row-level multi-tenant isolation and zero data leak.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content 3: Detailed Bullets -->
+                    <div class="proj-tab-content" id="dairyai-tab-bullets">
+                        <ul class="project-bullets">
+                            <li>
+                                <strong>Multi-Tenant Architecture &amp; Security:</strong> Architected and deployed a multi-tenant SaaS ERP featuring dedicated Admin &amp; Farmer Self-Service Portals, enforcing JWT-based RBAC, row-level tenant isolation, and an NGINX reverse proxy on AWS EC2 for secure API routing to Vercel.
+                            </li>
+                            <li>
+                                <strong>Hardware IoT Telemetry Pipeline:</strong> Engineered an IoT telemetry ingestion pipeline using cryptographic Device-API-Keys and locked UI inputs to process automated scale and milk analyzer streams, eliminating manual operator data tampering.
+                            </li>
+                            <li>
+                                <strong>Automated Financial Ledger &amp; Caching:</strong> Developed an automated financial ledger and farmer passbook powered by dynamic FAT/SNF pricing and Redis caching, executing real-time cattle feed debt deductions, duplicate-pour idempotency checks, and batch settlements.
+                            </li>
+                            <li>
+                                <strong>Trilingual AI &amp; Domain Ecosystem:</strong> Integrated a domain-specific, trilingual Groq AI assistant (English, Hindi, Marathi), alongside Cloudinary media storage, automated PDF/Excel reports, Twilio SMS alerts, Doctor Consultations, and an Equipment Marketplace.
+                            </li>
+                            <li>
+                                <strong>AWS High-Availability &amp; Concurrency Benchmarking:</strong> Architected high-availability cloud infrastructure on AWS using ELB and Auto Scaling; stress-tested with Apache JMeter across 5,000 concurrent collectors (16,000+ requests) to validate sub-50ms latency and a 0.00% error rate.
+                            </li>
+                            <li>
+                                <strong>Rigorous Test Automation:</strong> Authored 83 automated unit and integration tests via JUnit 5 &amp; Mockito (100% pass rate) to safeguard pricing formulas, tenant security boundaries, and payment settlement logic, complemented by an IoT device simulator for concurrency testing.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Project 2: CodeArena -->
+                <div class="project-detailed-card" id="project-codearena">
+                    <div class="project-header">
+                        <div class="project-meta-top">
+                            <span class="project-type-badge secondary-badge">Distributed Systems &amp; Microservices</span>
+                            <span class="project-timeline">July 2026 – Present</span>
+                        </div>
+                        <h3 class="project-title">CodeArena – Microservices-Based Code Execution &amp; DSA Platform</h3>
+                        <div class="project-links-bar">
+                            <a href="https://github.com/kashilingbhusnar21/code-execution-platform" target="_blank" class="btn-project-link github">
+                                <span>GitHub Repository</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Pills -->
+                    <div class="project-tech-line">
+                        <span class="tech-stack-label">Tech Stack:</span>
+                        <div class="tech-stack-tags">
+                            <span class="stack-chip">Java</span>
+                            <span class="stack-chip">Spring Boot</span>
+                            <span class="stack-chip">Microservices</span>
+                            <span class="stack-chip">React</span>
+                            <span class="stack-chip">RabbitMQ</span>
+                            <span class="stack-chip">Docker</span>
+                            <span class="stack-chip">MySQL</span>
+                            <span class="stack-chip">AWS S3</span>
+                            <span class="stack-chip">Spring Security</span>
+                            <span class="stack-chip">SSE</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Project Sub-Tabs -->
+                    <div class="project-tabs-nav">
+                        <button class="proj-tab-btn active" onclick="switchProjectTab('codearena', 'metrics')">📊 Sandbox &amp; Engine Stats</button>
+                        <button class="proj-tab-btn" onclick="switchProjectTab('codearena', 'architecture')">🏛️ Asynchronous Pipeline</button>
+                        <button class="proj-tab-btn" onclick="switchProjectTab('codearena', 'bullets')">📋 Technical Achievements</button>
+                    </div>
+
+                    <!-- Tab Content 1: Metrics -->
+                    <div class="proj-tab-content active" id="codearena-tab-metrics">
+                        <div class="project-metrics-grid">
+                            <div class="metric-box">
+                                <div class="metric-val">&lt; 1s</div>
+                                <div class="metric-lbl">Sub-second Warm Container Exec</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-val">100+</div>
+                                <div class="metric-lbl">DSA Problems Engine</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-val">400+</div>
+                                <div class="metric-lbl">Public &amp; Hidden Test Cases</div>
+                            </div>
+                            <div class="metric-box">
+                                <div class="metric-val">Strict Sandbox</div>
+                                <div class="metric-lbl">1 CPU, 256MB RAM, No Network</div>
+                            </div>
+                        </div>
+
+                        <!-- Sandbox Isolation Visualizer -->
+                        <div class="bench-visualizer">
+                            <div class="bench-header">
+                                <strong>Container Sandbox Security Safeguards</strong>
+                                <span class="badge-bench-pass">Hardened Isolation Active</span>
+                            </div>
+                            <div class="sandbox-features-grid">
+                                <div class="sandbox-item">
+                                    <span class="sand-icon">🛡️</span>
+                                    <div>
+                                        <strong>Network Isolation</strong>
+                                        <p><code>--network none</code> prevents untrusted code egress or socket abuse.</p>
+                                    </div>
+                                </div>
+                                <div class="sandbox-item">
+                                    <span class="sand-icon">⚡</span>
+                                    <div>
+                                        <strong>Warm-Container Pool</strong>
+                                        <p>Pre-initialized containers slash cold boot from 4s to sub-second exec.</p>
+                                    </div>
+                                </div>
+                                <div class="sandbox-item">
+                                    <span class="sand-icon">🛑</span>
+                                    <div>
+                                        <strong>Fork-Bomb Mitigation</strong>
+                                        <p><code>--pids-limit=50</code> stops exponential thread spawning attacks.</p>
+                                    </div>
+                                </div>
+                                <div class="sandbox-item">
+                                    <span class="sand-icon">📡</span>
+                                    <div>
+                                        <strong>Server-Sent Events</strong>
+                                        <p>Stream real-time verdict states (Running, Accepted, TLE) without DB polling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content 2: Architecture Pipeline -->
+                    <div class="proj-tab-content" id="codearena-tab-architecture">
+                        <div class="architecture-flow-diagram">
+                            <div class="flow-step">
+                                <div class="step-num">1</div>
+                                <div class="step-card">
+                                    <h4>Code Submission</h4>
+                                    <p>React UI submits user code payload to API Gateway with JWT token.</p>
+                                </div>
+                            </div>
+                            <div class="flow-connector">➔</div>
+                            <div class="flow-step">
+                                <div class="step-num">2</div>
+                                <div class="step-card">
+                                    <h4>RabbitMQ Message Queue</h4>
+                                    <p>Decouples API gateway from execution workers to absorb high concurrency spikes.</p>
+                                </div>
+                            </div>
+                            <div class="flow-connector">➔</div>
+                            <div class="flow-step">
+                                <div class="step-num">3</div>
+                                <div class="step-card">
+                                    <h4>Strategy Pattern Workers</h4>
+                                    <p>Worker node selects JavaExecutor, PythonExecutor, or CppExecutor strategy.</p>
+                                </div>
+                            </div>
+                            <div class="flow-connector">➔</div>
+                            <div class="flow-step">
+                                <div class="step-num">4</div>
+                                <div class="step-card">
+                                    <h4>SSE Verdict Streaming</h4>
+                                    <p>Warm Docker container executes against 400+ tests and streams result directly to UI.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Content 3: Detailed Bullets -->
+                    <div class="proj-tab-content" id="codearena-tab-bullets">
+                        <ul class="project-bullets">
+                            <li>
+                                <strong>Asynchronous Microservices &amp; Real-Time Verdicts:</strong> Architected an asynchronous microservices pipeline separating API and worker nodes via RabbitMQ, implementing Server-Sent Events (SSE) for low-latency, real-time verdict streaming to the React UI without database polling.
+                            </li>
+                            <li>
+                                <strong>Design Patterns &amp; Multi-Language Extensibility:</strong> Applied the Strategy Design Pattern to build modular, language-specific execution strategies (JavaExecutor, PythonExecutor, CppExecutor), enabling clean runtime extensibility for new languages without modifying core workflow code.
+                            </li>
+                            <li>
+                                <strong>Secure Docker Sandbox Isolation:</strong> Engineered a secure Docker execution sandbox enforcing strict resource quotas (1 CPU, 256MB RAM), fork-bomb mitigation (--pids-limit=50), and complete network isolation (--network none) to safely evaluate untrusted user code.
+                            </li>
+                            <li>
+                                <strong>Warm-Container Pool Optimization:</strong> Implemented a warm-container pooling strategy with pre-initialized Docker containers, reducing startup latency from 3–5 seconds to sub-second execution speeds via docker exec.
+                            </li>
+                            <li>
+                                <strong>LeetCode-Style Evaluation Engine:</strong> Developed a technical assessment platform featuring 100+ DSA problems, backed by an automated evaluation engine that validates submissions against 400+ public and hidden test cases with output normalization and live skill progress tracking.
+                            </li>
+                            <li>
+                                <strong>Cloud Storage &amp; Stateless Security:</strong> Integrated AWS S3 for scalable source code storage and MySQL for relational problem schemas, securing all user endpoints and submission histories using Spring Security and stateless JWT authentication.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Achievements Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2>Education &amp; Achievements</h2>
+            <p class="section-subtitle">Academic qualifications, competitive achievements, and technical certifications</p>
+
+            <div class="edu-achieve-grid">
+                <!-- Education Column -->
+                <div class="edu-column">
+                    <h3 class="subsection-title">🎓 Education</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-card">
+                            <span class="timeline-badge">Expected 2027</span>
+                            <h4>Master of Computer Applications (MCA)</h4>
+                            <p class="institution">Modern College of Engineering, Pune</p>
+                            <p class="cgpa-highlight"><strong>CGPA:</strong> 8.05</p>
+                        </div>
+
+                        <div class="timeline-card">
+                            <span class="timeline-badge">2022 – 2025</span>
+                            <h4>Bachelor of Science (B.Sc.)</h4>
+                            <p class="institution">Raje Ramrao Mahavidyalaya, Jath</p>
+                            <p class="cgpa-highlight"><strong>CGPA:</strong> 8.06</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements & Certifications Column -->
+                <div class="achieve-column">
+                    <h3 class="subsection-title">🏆 Achievements &amp; Certifications</h3>
+                    <div class="achieve-cards-list">
+                        <div class="achieve-card">
+                            <div class="achieve-icon">🌟</div>
+                            <div class="achieve-content">
+                                <h4>Avishkar Research Convention</h4>
+                                <p>Selected from college-level qualifiers to present the <strong>DairyAI Nexus</strong> platform at the Zonal Level.</p>
+                            </div>
+                        </div>
+
+                        <div class="achieve-card">
+                            <div class="achieve-icon">📜</div>
+                            <div class="achieve-content">
+                                <h4>NPTEL Elite Certification: Programming in Java</h4>
+                                <p>Awarded by <strong>IIT Kharagpur</strong> for elite mastery in core Java programming concepts.</p>
+                            </div>
+                        </div>
+
+                        <div class="achieve-card">
+                            <div class="achieve-icon">💼</div>
+                            <div class="achieve-content">
+                                <h4>Database Management Systems Virtual Internship</h4>
+                                <p>Completed hands-on relational database internship via <strong>EduSkills</strong> in collaboration with <strong>AICTE</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="achieve-card">
+                            <div class="achieve-icon">🚀</div>
+                            <div class="achieve-content">
+                                <h4>Advanced Java Systems Training</h4>
+                                <p>Specialized enterprise systems training conducted by <strong>EduPyramids, SINE IIT Bombay</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>I am actively seeking backend engineering and distributed systems roles. Whether you have an open opportunity or a technical inquiry, feel free to connect!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div class="contact-meta">
+                                <strong>Email:</strong>
+                                <a href="mailto:kashilingbhusnur@gmail.com" class="contact-link">kashilingbhusnur@gmail.com</a>
+                            </div>
+                            <button class="btn-copy-sm" onclick="copyContact('kashilingbhusnur@gmail.com', 'Email')" title="Copy email">Copy</button>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div class="contact-meta">
+                                <strong>Phone:</strong>
+                                <a href="tel:+919556044178" class="contact-link">+91 95560 44178</a>
+                            </div>
+                            <button class="btn-copy-sm" onclick="copyContact('+919556044178', 'Phone')" title="Copy phone">Copy</button>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div class="contact-meta">
+                                <strong>Location:</strong>
+                                <span>Pune, Maharashtra, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/kashilingbhusnar" target="_blank" class="social-link linkedin">LinkedIn</a>
+                        <a href="https://github.com/kashilingbhusnar21" target="_blank" class="social-link github">GitHub</a>
+                        <a href="mailto:kashilingbhusnur@gmail.com" class="social-link email">Direct Email</a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
+                    <input type="text" name="name" id="form-name" placeholder="Your Name" required>
+                    <input type="email" name="email" id="form-email" placeholder="Your Email" required>
+                    <textarea name="message" id="form-message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span>
+                        <span class="btn-arrow">✉️</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Back to Top" onclick="scrollToTop()">↑</button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Kashiling Bhusnar. Built for scalable backend engineering &amp; distributed systems.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
